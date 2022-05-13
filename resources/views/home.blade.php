@@ -121,13 +121,28 @@
           </div>
        </div>
        <header id="topnav" class="navbar navbar-midnightblue navbar-fixed-top clearfix" role="banner">
-          <span id="trigger-sidebar" class="toolbar-trigger toolbar-icon-bg">
-          <a data-toggle="tooltips" data-placement="right" title="Toggle Sidebar"><span class="icon-bg"><i class="fa fa-fw fa-bars"></i></span></a>
-          </span>
-          <a class="navbar-brand" href="index.html">{{ env('APP_NAME') }}</a>
-          <div class="yamm navbar-left navbar-collapse collapse in">
-             <ul class="nav navbar-nav">
-             </ul>
+          <div class="row">
+
+            <div class="col-md5">
+               
+               <span id="trigger-sidebar" class="toolbar-trigger toolbar-icon-bg">
+               <a data-toggle="tooltips" data-placement="right" title="Toggle Sidebar"><span class="icon-bg"><i class="fa fa-fw fa-bars"></i></span></a>
+               </span>
+            </div>
+
+            <div class="col-md-5">
+
+               <h3 style="color:rgb(225, 231, 240); margin-bottom:0px;"> {{ env('APP_NAME') }} </h3>
+            </div>
+
+            <div class="col-md-5">
+
+               <div class="yamm navbar-left navbar-collapse collapse in">
+                  <ul class="nav navbar-nav">
+                  </ul>
+               </div>
+            </div>
+
           </div>
        </header>
        <div id="wrapper">
@@ -167,7 +182,7 @@
                    <div class="clearfix">
                       <ul class="list-unstyled list-inline pull-left">
                          <li>
-                            <h6 style="margin: 0;"> © 2015 {{ env('APP_NAME') }}</h6>
+                            <h6 style="margin: 0;"> © 2022 {{ env('APP_NAME') }}</h6>
                          </li>
                       </ul>
                       <button class="pull-right btn btn-link btn-xs hidden-print" id="back-to-top"><i class="fa fa-arrow-up"></i></button>
@@ -438,6 +453,9 @@
        <script type="text/javascript" src="assets/js/application.js"></script>
        <script type="text/javascript" src="assets/demo/demo.js"></script>
        <script type="text/javascript" src="assets/demo/demo-switcher.js"></script>
+
+       <script type="text/javascript" src="assets/plugins/form-inputmask/jquery.inputmask.bundle.min.js"></script>
+       <script type="text/javascript" src="assets/demo/demo-mask.js"></script>
        <!-- End loading site level scripts -->
        <!-- Load page level scripts-->
        <!-- End loading page level scripts-->

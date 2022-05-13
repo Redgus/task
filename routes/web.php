@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Product;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/products', 'products');
+Route::get('/products', [Product::class, 'store']);
+
+Route::post('/product_create', [Product::class, 'create'])->name('product_create');
