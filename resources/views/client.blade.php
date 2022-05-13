@@ -1,14 +1,14 @@
 @extends('home')
 
 @section('title')
-    Продукты
+    Клиенты
 @endsection
 
 @section('content')
 
 <div class="row" style="margin-bottom:20px;">
    <div class="col-md-12">
-      <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Создать продукт</a>
+      <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Создать клиента</a>
    </div>
 </div>
 
@@ -17,15 +17,15 @@
       <div class="modal-content">
          <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h2 class="modal-title">Форма создание продукта</h2>
+            <h2 class="modal-title">Форма создание клиента</h2>
          </div>
-         <form action="{{ route('product_create') }}" method="POST" class="form-horizontal row-border">
+         <form action="{{ route('client_create') }}" method="POST" class="form-horizontal row-border">
             <div class="modal-body">
             
                @csrf
 
                <div class="form-group">
-                  <label class="col-sm-2 control-label">Название продукта</label>
+                  <label class="col-sm-2 control-label">Имя, Фамилия</label>
                   <div class="col-sm-8">
                      <input name="name" type="text" class="form-control">
                      @error('name')
@@ -34,19 +34,19 @@
                   </div>
                </div>
                <div class="form-group">
-                  <label class="col-sm-2 control-label">Количество</label>
+                  <label class="col-sm-2 control-label">Адрес</label>
                   <div class="col-sm-8">
-                     <input name="amount" type="text" class="form-control">
-                     @error('amount')
+                     <input name="address" type="text" class="form-control">
+                     @error('address')
                      <div class="alert alert-danger">{{ $message }}</div>
                      @enderror
                   </div>
                </div>
                <div class="form-group">
-                  <label class="col-sm-2 control-label">Цена</label>
+                  <label class="col-sm-2 control-label">Телефон</label>
                   <div class="col-sm-8">
-                     <input name="price" type="text" class="form-control">
-                     @error('price')
+                     <input name="telephone" type="text" class="form-control">
+                     @error('telephone')
                      <div class="alert alert-danger">{{ $message }}</div>
                      @enderror
                   </div>
@@ -64,16 +64,16 @@
 
 <div class="panel panel-sky">
     <div class="panel-heading">
-       <h2>Таблица продуктов</h2>
+       <h2>Таблица клиентов</h2>
     </div>
     <div class="panel-body">
        <div class="table-responsive">
           <table class="table">
              <thead>
                 <tr>
-                   <th> Продукт </th>
-                   <th> Количество </th>
-                   <th> Цена </th>
+                   <th> Имя, Фамилия </th>
+                   <th> Адрес </th>
+                   <th> Телефон </th>
                 </tr>
              </thead>
              <tbody>
@@ -82,8 +82,8 @@
                
                   <tr>
                      <td> {{ $item['name'] }} </td>
-                     <td> {{ $item['amount'] }} </td>
-                     <td> {{ $item['price'] }} </td>
+                     <td> {{ $item['address'] }} </td>
+                     <td> {{ $item['telephone'] }} </td>
                </tr>
                @endforeach
              </tbody>
